@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Número de estudiantes</th>
+                <th><input class="text form-control form-control-sm" value="3" disabled></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Grade 1</th>
+            <th scope="col">Grade 2</th>
+            <th scope="col">Grade 3</th>
+            <th scope="col">Final</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">1</th>
+                <td><input type="text" class="form-control  form-control-sm student" id="student1" ></td>
+                <td><input type="text" maxlength="3" class="form-control form-control-sm grade-1" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-2" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-3" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" class="form-control  form-control-sm result" disabled></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><input type="text" class="form-control  form-control-sm student" id="student2" ></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-1" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-2" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-3" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" class="form-control  form-control-sm result" disabled></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td><input type="text" class="form-control  form-control-sm student" id="student3"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-1" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-2" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" maxlength="3" class="form-control  form-control-sm grade-3" onkeypress="handleNumber(event, '{1,1}');"></td>
+                <td><input type="text" class="form-control  form-control-sm result" disabled></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>El mejor estudiante es:</td>
+                <td><div id="message"></div></td>
+                <td></td>
+                <td></td>
+                <td class="text-center">
+                    <button class="btn btn-primary btn-sm" onclick="calculate()">Finish Course</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
