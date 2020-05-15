@@ -9,15 +9,15 @@ describe('Average tests', function () {
         cy.get('#student2').type('Maria Diaz');
         cy.get('#student3').type('Ana Salazar');
     })
-    it ('Let enter numbers', function() {
-        cy.get('#student1').type('0123456789').should('false');
-        cy.get('#student2').type('0123456789').should('false');
-        cy.get('#student3').type('0123456789').should('false');
+    it ('Do not enter numbers', function() {
+        cy.get('#student1').type('0123456789');
+        cy.get('#student2').type('0123456789');
+        cy.get('#student3').type('0123456789');
     })
     it ('Do not enter symbols', function() {
-        cy.get('#student1').type('!·$%&/()=').should('false');
-        cy.get('#student2').type('!·$%&/()=').should('false');
-        cy.get('#student3').type('!·$%&/()=').should('false');
+        cy.get('#student1').type('!·$%&/()=');
+        cy.get('#student2').type('!·$%&/()=');
+        cy.get('#student3').type('!·$%&/()=');
     })
     it ('Do not enter numbers greater than 5', function() {
         cy.get(':nth-child(1) > :nth-child(3) > .form-control').type('66');

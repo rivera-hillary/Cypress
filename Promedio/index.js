@@ -1,3 +1,11 @@
+function onlytext(e) {
+    console.log(e);
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla == 8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
 function calculate() {
 
     var name1 = document.getElementById("student1").value;
