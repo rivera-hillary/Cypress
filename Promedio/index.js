@@ -1,10 +1,10 @@
 function onlytext(e) {
     console.log(e);
-    tecla = (document.all) ? e.keyCode : e.which; // 2
-    if (tecla == 8) return true; // 3
-    patron =/[A-Za-z\s]/; // 4
-    te = String.fromCharCode(tecla); // 5
-    return patron.test(te); // 6
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla == 8) return true;
+    patron =/[A-Za-z\s]/;
+    te = String.fromCharCode(tecla);
+    return patron.test(te);
 }
 function calculate() {
 
@@ -49,6 +49,8 @@ with (event) {
     if (!charCode) return
     var c = String.fromCharCode(charCode)
     if (c.match(/[^-\d,]/)) return
+    var symbols = ["^,*,¨,Ç,;,:,_,-,ç,´,ñ,+,`"];
+    
     with (target) {
         var txt = value.substring(0, selectionStart) + c + value.substr(selectionEnd)
         var pos = selectionStart + 1
@@ -57,7 +59,7 @@ with (event) {
 var dot = count(txt, /\./, pos);
 txt = txt.replace(/[^-\d,]/g,'');
 
-var mask = mask.match(/^(\D*)\{(-)?(\d*|null)?(?:,(\d+|null))?\}(\D*)$/); if (!mask) return
+var mask = mask.match(/^(\D*)\{(-)?(\d*|null)?(?:,(\d+|null))?\}(\D*)$/); if (!mask) return 
 var sign = !!mask[2], decimals = +mask[4], integers = Math.max(0, +mask[3] - (decimals || 0))
 if (!txt.match('^' + (!sign?'':'-?') + '\\d*' + (!decimals?'':'(,\\d*)?') + '$')) return
 
@@ -66,6 +68,7 @@ console.log("mensaje: "+ txt[0]);
 if (integers && txt[0] && count(txt[0],/\d/) > integers) return
 if (decimals && txt[1] && txt[1].length > decimals) return
 txt[0] = txt[0].replace(/\B(?=(\d{1})+(?!\d))/g, '.')
+if (txt[0] == symbols) return 
 
 if (txt[0] >= 0 && txt[0] <= 5) {
     with (event.target) {
@@ -80,3 +83,4 @@ function count(str, c, e) {
     return n
 }
 }
+

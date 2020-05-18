@@ -4,7 +4,8 @@
   "description": "training cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cyopen": "cypress open"
   },
   "author": "Hillary Rivera",
   "license": "ISC",

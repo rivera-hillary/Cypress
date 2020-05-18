@@ -19,6 +19,11 @@ describe('Average tests', function () {
         cy.get('#student2').type('!·$%&/()=');
         cy.get('#student3').type('!·$%&/()=');
     })
+    it ('Deje ingresar más de 15 caracteres', function() {
+        cy.get('#student1').type('asdfghjkloiuytrewqazxcvbnmlñpoiuy').should('asdfghjkloiuytr');
+        cy.get('#student2').type('asdfghjkloiuytrewqazxcvbnmlñpoiuy').should('asdfghjkloiuytr');
+        cy.get('#student3').type('asdfghjkloiuytrewqazxcvbnmlñpoiuy').should('asdfghjkloiuytr');
+    })
     it ('Do not enter numbers greater than 5', function() {
         cy.get(':nth-child(1) > :nth-child(3) > .form-control').type('66');
         cy.get(':nth-child(2) > :nth-child(3) > .form-control').type('78');
