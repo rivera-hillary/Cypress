@@ -3,7 +3,7 @@ describe('No valida simbolos en campos de texto', function() {
         cy.visit('/');
         cy.get('.cerrarpopup').click();
     })
-    it ('Validar que se envíe el formulario con números como texto', function () {
+    it ('No valida que se envíe el formulario con simbolos como texto', function () {
         cy.get('#cliente_email').type('!"·$%@gmail.com');
         cy.get('#firstName').type('*^¨Ç');
         cy.get('#lastName').type(':;_¨Ç*');
