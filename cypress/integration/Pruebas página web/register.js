@@ -18,6 +18,6 @@ describe('Registro de un usuario en la página seven-seven', function() {
         cy.get('#form_registro_footer > :nth-child(12) > #registro').click();
         // Validación formulario exitoso
         cy.visit('https://www.sevenseven.com/registro/web/confirmacion');
-        cy.get('.thanks-top').should('be.visible','GRACIAS POR REGISTRARTE Y SER PARTE DE NUESTRA COMUNIDAD');
+        cy.get('.thanks-top').contains('Gracias por registrarte y ser parte de nuestra comunidad');
     })
 })
