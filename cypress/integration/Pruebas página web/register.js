@@ -2,7 +2,7 @@ describe('Registro de un usuario en la página seven-seven', function() {
     it('Ir a la página seven-seven', function () {
         cy.visit('/');
         cy.get('.cerrarpopup').click();
-        cy.get('.derechos').find('span').contains('Todos los derechos reservados Seven - Seven');
+        cy.get('body').should('have','seven');
     })
     it ('Validar que se envíe el formulario', function () {
         cy.get('#cliente_email').type('andream@gmail.com');
