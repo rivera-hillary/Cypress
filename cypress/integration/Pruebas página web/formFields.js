@@ -7,11 +7,11 @@ describe('Confirmación de mensaje de un campo obligatorio', function() {
         cy.get('#cliente_email').type('cagamez@gmail.com');
         cy.get('#form_registro_footer > :nth-child(12) > #registro').click();
         //Debe aceptar la Política de Tratamiento de Datos
-        cy.get('#form_registro_footer > :nth-child(10) > .checkbox > .custom_checkbox_container').click();
+        cy.get('#form_registro_footer > :nth-child(10) > .checkbox').find('[type="checkbox"]').check({ force: true });
         cy.get('#form_registro_footer > :nth-child(12) > #registro').click();
         cy.get('#form_registro_footer > .line3-2').contains('DEBES RELLENAR TODOS LOS CAMPOS OBLIGATORIOS.');
         cy.get('#cliente_email').type('cagamez@gmail.com').clear();
-        cy.get('#form_registro_footer > :nth-child(10) > .checkbox > .custom_checkbox_container').click();
+        cy.get('#form_registro_footer > :nth-child(10) > .checkbox').find('[type="checkbox"]').uncheck({ force: true });
     })
     it('Ingresando solo el nombre', function() {
         cy.get('#firstName').type('Camilo');

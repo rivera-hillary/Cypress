@@ -14,7 +14,7 @@ describe('Mensaje de confirmación de un usuario ya registrado en la página sev
         cy.get('#mes').select('Agosto');
         cy.get('#anio').select('2000');
         cy.get('#male').click();
-        cy.get('#form_registro_footer > :nth-child(10) > .checkbox > .custom_checkbox_container').click();
+        cy.get('#form_registro_footer > :nth-child(10) > .checkbox').find('[type="checkbox"]').check({ force: true });
         cy.get('#form_registro_footer > :nth-child(12) > #registro').click();
         // Validación de un mensaje de confirmación de un usuario ya registrado
         cy.get('#form_registro_footer > .line3-2 > .error-nn').should('be.visible','EL CLIENTE YA SE ENCUENTRA REGISTRADO');

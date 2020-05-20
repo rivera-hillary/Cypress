@@ -14,9 +14,9 @@ describe('No valida simbolos en campos de texto', function() {
         cy.get('#mes').select('Abril');
         cy.get('#anio').select('1975');
         cy.get('#male').click();
-        cy.get('#form_registro_footer > :nth-child(10) > .checkbox > .custom_checkbox_container').click();
+        cy.get('#form_registro_footer > :nth-child(10) > .checkbox').find('[type="checkbox"]').check({ force: true });
         cy.get('#form_registro_footer > :nth-child(12) > #registro').click();
-        // Validación formulario exitoso
+        // Muestra un mensaje de error al no validar el formulario
         cy.get('#form_registro_footer > .line3-2').contains('Ha ocurrido un error durante el proceso de registro, por favor recarga la página y vuelve a intentarlo');
     })
 })
